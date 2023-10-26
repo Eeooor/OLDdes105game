@@ -56,7 +56,7 @@ public class MyFirstPlayerController : MonoBehaviour
 
     public void GameOver()
     {
-
+        Debug.Log("aAAAAAAAAa");
     }
 
 }
