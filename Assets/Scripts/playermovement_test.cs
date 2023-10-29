@@ -1,34 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class OLDMyFirstPlayerController : MonoBehaviour
+public class playermovement_test : MonoBehaviour
 {
-    /* ^^^^^ -------- Beginner --- Challenge 1 --- Beginner -------- ^^^^^ 
-     *  Move the code for checking the player inputs from inside the update function
-     *  into a new function called CheckInputs()
-     */
     Vector3 myMovement = new Vector3(0, 0, 0);
-    public float mySpeed = 0.001f;
+    public float mySpeed = 0.01f;
 
     // Start is called before the first frame update
     void Start()
-    {
-    }
-
-    
-
-    // Update is called once per frame
-    /*
-     
-     */
-    void Update()
-    {
-        CheckInputs();
-    }
-
-    void CheckInputs()
     {
         myMovement = new Vector3(0, 0, 0);
 
@@ -55,10 +35,16 @@ public class OLDMyFirstPlayerController : MonoBehaviour
         }
         if (myMovement.magnitude != 0)
         {
-            print("Value before normalisation: " + myMovement);
+            //print("Value before normalisation: " + myMovement);
             myMovement.Normalize();
-            print("Value after normalisation: " + myMovement);
+            //print("Value after normalisation: " + myMovement);
         }
         transform.position = transform.position + myMovement * mySpeed;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
