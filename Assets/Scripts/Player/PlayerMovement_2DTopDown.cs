@@ -6,9 +6,9 @@ public class PlayerMovement_2DTopDown : MonoBehaviour
 {
     //---------------------------------------------------------------------------------
 
-    // IMPORTANT NOTES FOR REUSE!
+    // Basic script intended for controlling a object from a topdown 2d perspective 
     // REQUIRES Rigidbody2D TO BE ATTATCHED TO GAMEOBJECT! Gravity must be set to 0!
-    // Controls WASD, Arrow Keys and Controler input for movement in a 2d top down game
+    // Made by Lior "Eeooor" Kahanov
 
     //---------------------------------------------------------------------------------
 
@@ -18,8 +18,8 @@ public class PlayerMovement_2DTopDown : MonoBehaviour
 
     Rigidbody2D Player_Rigidbody; //Defines Ridgidbody
 
-    public float PlayerMovementSpeed = 5; // Speed variable
-    //ideally you want to use a hardcoded value (in this case, 5) but by setting to public allows for editing in Unity Editor
+    [SerializeField] float PlayerMovementSpeed = 5; // Speed variable
+    
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class PlayerMovement_2DTopDown : MonoBehaviour
 
     void CheckInputs()
     {
-        // sets X and Y axis movement based on any changes to preset Unity input variables (this allows WASD, Arrow Keys and Controler input to be used for movement)
+        // sets X and Y axis movement and allows WASD, Arrow Keys and Controler input to be used for movement)
         PlayerMovement.x = Input.GetAxisRaw("Horizontal");
         PlayerMovement.y = Input.GetAxisRaw("Vertical");
 
