@@ -14,6 +14,8 @@ public class PlayerMovement_2DTopDown : MonoBehaviour
 
     Rigidbody2D Player_Rigidbody; //Defines Ridgidbody
 
+    public float PlayerMovementSpeed = 1;
+
     //----------------------------------------------
 
     // Start is called before the first frame update
@@ -32,8 +34,12 @@ public class PlayerMovement_2DTopDown : MonoBehaviour
 
     void CheckInputs()
     {
+        //define input
         PlayerMovement.x = Input.GetAxisRaw("Horizontal");
         PlayerMovement.y = Input.GetAxisRaw("Vertical");
+
+        // Add speed to movement
+        PlayerMovement = PlayerMovement * PlayerMovementSpeed;
 
         // Directly assigns values to Attached Ridgidbody
         Player_Rigidbody.velocity = PlayerMovement;
