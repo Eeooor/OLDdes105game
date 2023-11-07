@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2251792386170242956}
   - component: {fileID: 148042473292683594}
   m_Layer: 0
-  m_Name: Enemie_Wasp
+  m_Name: PrototypeEnemie_Wasp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  Objectspeed: 1
+  Objectspeed: 3
 --- !u!50 &2251792386170242956
 Rigidbody2D:
   serializedVersion: 4
@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &148042473292683594
 BoxCollider2D:
   m_ObjectHideFlags: 0
