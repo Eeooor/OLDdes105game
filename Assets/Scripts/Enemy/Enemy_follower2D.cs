@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class Enemy_follower2D : MonoBehaviour
 {
+    //-----------------------------------------------
+
+    // Basic script that sets an object to go to another object (intended as basic enemy for a VS style game)
+    // REQUIRES Rigidbody2D TO BE ATTATCHED TO GAMEOBJECT!
+    // Made by Lior "Eeooor" Kahanov
+
+    //-----------------------------------------------
 
     // Set Up variables
 
-    [SerializeField] Transform Target;
+    [SerializeField] Transform Target;   //variable where target object is set
 
-    [SerializeField] float Objectspeed;
+    [SerializeField] float Objectspeed;  //variable dictating object speed
 
-    Rigidbody2D Object_Rigidbody;
+    Rigidbody2D Object_Rigidbody;   //Defines Ridgidbody for object this script is attatched to
 
 
 
