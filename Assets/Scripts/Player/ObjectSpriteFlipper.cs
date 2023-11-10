@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSpriteFlipper : MonoBehaviour
+public class ObjectSpriteFlipper : MonoBehaviour
 {
     
     // Flips game object sprite based on it's velocity
