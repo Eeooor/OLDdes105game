@@ -12,7 +12,7 @@ public class HealthManager : MonoBehaviour
     //-----------------------------------------------
 
     // Set Up variables
-    [SerializeField] int healthAmount = 100;    // Base Health Ammount
+    [SerializeField] float healthAmount;    // Base Health Ammount
 
 
     // Start is called before the first frame update
@@ -27,15 +27,19 @@ public class HealthManager : MonoBehaviour
         
     }
 
-    public void takeDamage(int damageTaken)
+    public void takeDamage(float damageTaken)
     {
         healthAmount -= damageTaken;
-        Debug.Log("Health is now " +  healthAmount);
+        Debug.Log(gameObject.name + " Health is now " +  healthAmount);
 
         if (healthAmount <= 0)
         {
-            // Do other stuff (perhaps call other scripts?)
-           Destroy(gameObject);
+            //do nothing
         }
+    }
+    
+    public float GetHealth() 
+    {
+        return healthAmount;
     }
 }
