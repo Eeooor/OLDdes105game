@@ -6,13 +6,13 @@ public class PlayerHealthManagment : MonoBehaviour
 {
     
     HealthManager healthManager;
-    SpriteRenderer spriteRenderer;
+
+    bool isNotDead = true; //if false, means player is dead
 
     // Start is called before the first frame update
     void Start()
     {
         healthManager = GetComponent<HealthManager>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -32,9 +32,22 @@ public class PlayerHealthManagment : MonoBehaviour
             }
             else if (healthManager.GetHealth() == 0)
             {
-                
+                isNotDead = false; //sets isNotDead to false (player is dead)
             }
             
+        }
+    }
+
+    //Getter function for isNotDead bool
+    public bool checkIfAlive()
+    {
+        if (isNotDead == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    //-----------------------------------------------
-
-    // Generic Health Storage Script (Work in Progress) that can be used to store and edit health values for any game object!
-    // Made by Lior "Eeooor" Kahanov
-
-    //-----------------------------------------------
-
-    // Set Up variables
-    [SerializeField] float healthAmount;    // Base Health Ammount
+    // Base Health Ammount
+    [SerializeField] float healthAmount;
 
 
     // Start is called before the first frame update

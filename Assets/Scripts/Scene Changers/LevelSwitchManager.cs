@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class LevelSwitchManager : MonoBehaviour
 {
+    // gameobject called Player
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,13 @@ public class SceneManager : MonoBehaviour
     public void toGameOver()
     {
         Debug.Log("Scene switched to gameover");
+        SceneManager.LoadScene("GameOver");
+    }
+
+    public void toMainGame()
+    {
+        Debug.Log("Scene switched to MainGame");
+        SceneManager.LoadScene("MainGame");
     }
 
     public void toMainMenu()
@@ -29,6 +37,7 @@ public class SceneManager : MonoBehaviour
 
     public void toExitApp()
     {
-        Debug.Log("Exited App");
+        Debug.Log("Quit App");
+        Application.Quit();
     }
 }
