@@ -4,27 +4,17 @@ using UnityEngine;
 
 public class PlayerMovement_2DTopDown : MonoBehaviour
 {
-    //---------------------------------------------------------------------------------
+    //Allows for user to control Player Object from TopDown perspective
 
-    // Basic script intended for controlling a object from a topdown 2d perspective 
-    // REQUIRES Rigidbody2D TO BE ATTATCHED TO GAMEOBJECT! Gravity must be set to 0!
-    // Made by Lior "Eeooor" Kahanov
+    Vector3 PlayerMovement;
 
-    //---------------------------------------------------------------------------------
+    Rigidbody2D Player_Rigidbody;
 
-    // Set Up variables
-
-    Vector3 PlayerMovement; //Defines vector for player movement
-
-    Rigidbody2D Player_Rigidbody; //Defines Ridgidbody
-
-    [SerializeField] float PlayerMovementSpeed = 5; // Speed variable
-    
+    [SerializeField] float PlayerMovementSpeed = 5;
 
     // Start is called before the first frame update
     void Start()
     {
-        //set up on start: sets PlayerMovement to a new vector and gets ridgidbody component of attached GameObject
         PlayerMovement = new Vector3();
         Player_Rigidbody = GetComponent<Rigidbody2D>();
     }

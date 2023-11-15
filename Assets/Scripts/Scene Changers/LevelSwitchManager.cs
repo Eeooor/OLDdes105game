@@ -5,18 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelSwitchManager : MonoBehaviour
 {
-    // gameobject called Player
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Used to change Scenes (requires other scripts to call functions)
 
     public void toGameOver()
     {
@@ -33,6 +22,7 @@ public class LevelSwitchManager : MonoBehaviour
     public void toMainMenu()
     {
         Debug.Log("Scene switched to MainMenu");
+        //SceneManager.LoadScene("MainMenu");
     }
 
     public void toExitApp()

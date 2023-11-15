@@ -10,13 +10,11 @@ public class PlayerDetector : MonoBehaviour
 
     PlayerHealthManagment HealthCheck;
 
-
     // Start is called before the first frame update
     void Start()
     {
         levelSwitcher = GetComponent<LevelSwitchManager>();
         HealthCheck = GameObject.Find("Player").GetComponent<PlayerHealthManagment>();
-
     }
 
     private void FixedUpdate()

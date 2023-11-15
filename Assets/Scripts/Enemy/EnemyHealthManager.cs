@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyHealthManager : MonoBehaviour
 {
-    //Similar to PlayerHealth Manager
-    //But for enemies
+    //Similar to PlayerHealth Manager but for enemies
+
     Rigidbody2D Object_Rigidbody;
 
 

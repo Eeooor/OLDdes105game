@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ObjectSpriteFlipper : MonoBehaviour
 {
-    
-    // Flips game object sprite based on it's velocity
+    // Flips game object sprite based on it's velocity (saves needing to animate both Left and Right animations)
 
     Rigidbody2D Rigidbody2D;
     SpriteRenderer spriteRenderer;

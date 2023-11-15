@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFollower : MonoBehaviour
+public class GoToTarget : MonoBehaviour
 {
-    // Tells gameobject to follow target object
+    // Generic script that tells gameobject to follow target object
 
     [SerializeField] Transform Target;
 
     [SerializeField] float Objectspeed;
 
     Rigidbody2D Object_Rigidbody;
-
-
 
     // Start is called before the first frame update
     void Start()

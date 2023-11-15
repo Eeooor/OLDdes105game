@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerHealthManagment : MonoBehaviour
 {
-    
+    // Manages Player Health
+
     HealthManager healthManager;
 
     bool isNotDead = true; //if false, means player is dead
@@ -13,12 +14,6 @@ public class PlayerHealthManagment : MonoBehaviour
     void Start()
     {
         healthManager = GetComponent<HealthManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnCollisionStay2D(Collision2D other)
