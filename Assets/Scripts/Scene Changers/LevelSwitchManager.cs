@@ -22,7 +22,7 @@ public class LevelSwitchManager : MonoBehaviour
     public void toMainMenu()
     {
         Debug.Log("Scene switched to MainMenu");
-        //SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void toExitApp()
