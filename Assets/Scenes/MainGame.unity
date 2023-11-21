@@ -260,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemie_Wasp: {fileID: 8889729127029091266, guid: fe684aa96183f574ea85962e75942817, type: 3}
   camBounds: {fileID: 268571876}
-  timeRemaining: 10
+  timeRemaining: 5
   timerIsRunning: 0
 --- !u!4 &782231447
 Transform:

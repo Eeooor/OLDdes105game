@@ -18,44 +18,36 @@ public class EnemySpawner : MonoBehaviour
     float spawnHeightmax;
     float spawnWidthmax;
 
+
+    int ammount_of_enemies = 0;
+
     // Timer stuff (see end for credits)
+    float timeRemaining = 5;
 
-    public float timeRemaining = 5;
-    public bool timerIsRunning = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Starts the timer automatically
-        timerIsRunning = true;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        // Changes as camera moves
-        //set min bounds
-        spawnHeightmin = camBounds.orthographicSize + 1;
-        spawnWidthmin = camBounds.orthographicSize * camBounds.aspect + 1;
-        //set max bounds
-        spawnHeightmax = camBounds.orthographicSize + 3;
-        spawnWidthmax = camBounds.orthographicSize * camBounds.aspect + 3;
-
-
-        //Timer stuff from https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/
-        if (timerIsRunning)
+    //Timer stuff adapted from https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/
+ 
+     if (timeRemaining > 0)
+     {
+        timeRemaining -= Time.deltaTime;
+     }
+     else
         {
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-            }
-            else
-            {
-                Debug.Log("Time has run out!");
-                timeRemaining = 0;
-                SpawnEnemies();
-                timerIsRunning = false;
-            }
+            // check as camera moves
+            //set min bounds
+            spawnHeightmin = camBounds.orthographicSize + 1;
+            spawnWidthmin = camBounds.orthographicSize * camBounds.aspect + 1;
+            //set max bounds
+            spawnHeightmax = camBounds.orthographicSize + 5;
+            spawnWidthmax = camBounds.orthographicSize * camBounds.aspect + 5;
+
+            timeRemaining = 0;
+            ammount_of_enemies++;
+            SpawnEnemies();
+            timeRemaining = 5;
         }
     }
 
@@ -67,6 +59,9 @@ public class EnemySpawner : MonoBehaviour
         // above is used to get random values within camera bounds
 
         random_position = new Vector3(RandomXpos, RandomYPos, 0f); // assigns values to position vector for use in loop
-        Instantiate(Enemie_Wasp, random_position, transform.rotation);
+        for (int i = 0; i < ammount_of_enemies; i++)
+        {
+            Instantiate(Enemie_Wasp, random_position, transform.rotation);
+        }
     }
 }
