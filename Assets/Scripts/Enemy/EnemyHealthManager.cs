@@ -20,7 +20,6 @@ public class EnemyHealthManager : MonoBehaviour
         //Checks if other object collided with has tag "Player"
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("HIT!"); //Prints Hit message to Unity console
             //call take damage for Enemy object
             HealthManGeneric.takeDamage(100.0f);
             //if enemy object health reaches 0 destroy object
