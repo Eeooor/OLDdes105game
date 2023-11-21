@@ -38,8 +38,8 @@ public class EnemySpawner : MonoBehaviour
         {
             // check as camera moves
             //set min bounds
-            spawnHeightmin = camBounds.orthographicSize + 1;
-            spawnWidthmin = camBounds.orthographicSize * camBounds.aspect + 1;
+            spawnHeightmin = -camBounds.orthographicSize + 1;
+            spawnWidthmin = -camBounds.orthographicSize * camBounds.aspect + 1;
             //set max bounds
             spawnHeightmax = camBounds.orthographicSize + 5;
             spawnWidthmax = camBounds.orthographicSize * camBounds.aspect + 5;
@@ -53,14 +53,14 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemies()
     {
-        float RandomXpos = Random.Range(spawnHeightmin, spawnHeightmax);
-
-        float RandomYPos = Random.Range(spawnHeightmin, spawnWidthmax);
-        // above is used to get random values within camera bounds
-
-        random_position = new Vector3(RandomXpos, RandomYPos, 0f); // assigns values to position vector for use in loop
         for (int i = 0; i < ammount_of_enemies; i++)
         {
+            float RandomXpos = Random.Range(spawnHeightmin, spawnHeightmax);
+
+            float RandomYPos = Random.Range(spawnHeightmin, spawnWidthmax);
+            // above is used to get random values within camera bounds
+
+            random_position = new Vector3(RandomXpos, RandomYPos, 0f); // assigns values to position vector for use in loop
             Instantiate(Enemie_Wasp, random_position, transform.rotation);
         }
     }
