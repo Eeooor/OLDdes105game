@@ -6,15 +6,6 @@ public class EnemyHealthManager : MonoBehaviour
 {
     //Similar to PlayerHealth Manager but for enemies
 
-    Rigidbody2D Object_Rigidbody;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        Object_Rigidbody = GetComponent<Rigidbody2D>();
-    }
-
     // Detects if object is remaining collided with another object
     private void OnCollisionStay2D(Collision2D other)
     {
@@ -22,6 +13,8 @@ public class EnemyHealthManager : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("HIT!"); //Prints Hit message to Unity console
+            //call take damage for Enemy object
+            //if enemy object health reaches 0 destroy object
         }
     }
 }

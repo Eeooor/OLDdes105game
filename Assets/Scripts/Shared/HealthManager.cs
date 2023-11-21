@@ -18,6 +18,7 @@ public class HealthManager : MonoBehaviour
         maxHealth = healthAmount;
     }
 
+    // Call to damage attached object
     public void takeDamage(float damageTaken)
     {
         healthAmount -= damageTaken;
@@ -29,6 +30,8 @@ public class HealthManager : MonoBehaviour
             // Backup should health go below 0. Probably useless.
         }
     }
+
+    // Call to heal attatched object
     public void addHealth(float amountHealed)
     {
         healthAmount += amountHealed;

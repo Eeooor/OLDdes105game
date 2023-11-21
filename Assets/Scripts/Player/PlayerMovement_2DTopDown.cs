@@ -27,7 +27,7 @@ public class PlayerMovement_2DTopDown : MonoBehaviour
 
     void CheckInputs()
     {
-        // sets X and Y axis movement and allows WASD, Arrow Keys and Controler input to be used for movement)
+        // sets X and Y axis movement and allows WASD, Arrow Keys and Controller input to be used for movement)
         PlayerMovement.x = Input.GetAxisRaw("Horizontal");
         PlayerMovement.y = Input.GetAxisRaw("Vertical");
 
