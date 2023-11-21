@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealthManagment : MonoBehaviour
 {
-    // Manages Player Health
+    // Manages Player Health and collision
 
     HealthManager healthManager;
 
@@ -30,6 +30,18 @@ public class PlayerHealthManagment : MonoBehaviour
                 isNotDead = false; //sets isNotDead to false (player is dead)
             }
             
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        //Checks if other object collided with has tag "Health"
+        if (other.gameObject.CompareTag("Health"))
+        {
+            Debug.Log("Player Interacted with item!");
+            healthManager.addHealth(10.0f);
+            Debug.Log("Added 10 to player health!" + healthManager.GetHealth());
+            Destroy(other.gameObject);
         }
     }
 
